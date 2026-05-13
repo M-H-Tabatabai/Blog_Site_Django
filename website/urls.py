@@ -19,7 +19,7 @@ from website.views import *
 
 
 urlpatterns = [
-    path("home/", Home),
-    path("about/", About_Me),
-    path("contact/", Contact),
+    path("", index),
+    path("about/", about),
+    path("contact/", contact),
 ]
