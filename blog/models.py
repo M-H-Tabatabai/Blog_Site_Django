@@ -14,3 +14,6 @@ class Post(models.Model):
     published_date = models.DateTimeField(default = timezone.now)
     created_date = models.DateTimeField(auto_now_add= True)
     updated_date = models.DateTimeField(auto_now= True)
+
+    def __str__(self):
+        return f"title : {self.title} - id : {self.id}"
