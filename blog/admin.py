@@ -9,12 +9,6 @@ class PostAdmin(admin.ModelAdmin):
     ordering = ('-created_date',)
     list_per_page = 20  # نمایش ۲۰ رکورد در هر صفحه
     date_hierarchy = 'created_date'
-    
-
-
-    
-
-
 
     
 admin.site.register(Post, PostAdmin)
