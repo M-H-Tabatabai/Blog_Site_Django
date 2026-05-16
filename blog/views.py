@@ -3,7 +3,9 @@ from blog.models import Post
 
 
 def blog(request):
-    return render(request, "blog/blog-home.html")
+    posts = Post.objects.filter(status = True)
+    context = {"posts": posts} 
+    return render(request, "blog/blog-home.html", context)
 
 def single_blog(request):
     return render(request, "blog/blog-single.html")
