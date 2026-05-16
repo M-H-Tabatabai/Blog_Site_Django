@@ -22,4 +22,5 @@ app_name = "blog"
 urlpatterns = [
     path("", blog, name="blog"),
     path("single/", single_blog, name="single"),
+    path("test/", test, name="test")
 ]
