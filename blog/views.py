@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from blog.models import Post
 
 
@@ -14,4 +14,8 @@ def test(request):
     posts = Post.objects.all()
     context = {"post_1": posts, "name":["hossein", "ali", "abbas"]} 
     return render(request, "test.html", context)
+
+def test2(request, pid):
+    post = get_object_or_404(Post, id=pid)
+    return render(request, "test.html", {"posts": post})
 
