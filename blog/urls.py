@@ -21,7 +21,7 @@ app_name = "blog"
 
 urlpatterns = [
     path("", blog, name="blog"),
-    path("single/", single_blog, name="single"),
+    path("<int:pid>/", single_blog, name="single"),
     path("test/", test, name="test"),
     path("<int:pid>", test2, name="test2")
 ]

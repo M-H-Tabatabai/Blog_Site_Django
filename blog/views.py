@@ -7,8 +7,11 @@ def blog(request):
     context = {"posts": posts} 
     return render(request, "blog/blog-home.html", context)
 
-def single_blog(request):
-    return render(request, "blog/blog-single.html")
+def single_blog(request, pid):
+    posts = Post.objects.filter(status = True)
+    post = get_object_or_404(posts, id=pid)
+    context = {"post":post}
+    return render(request, "blog/blog-single.html", context)
 
 def test(request):
     posts = Post.objects.all()
