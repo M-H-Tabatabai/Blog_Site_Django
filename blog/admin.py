@@ -1,5 +1,6 @@
 from django.contrib import admin
 from blog.models import Post
+from blog.models import Category
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -19,5 +20,8 @@ class PostAdmin(admin.ModelAdmin):
     list_per_page = 20  # نمایش ۲۰ رکورد در هر صفحه
     date_hierarchy = "created_date"
 
+class CategoryAdmin(admin.ModelAdmin):
+    list_display =("name",)
 
+admin.site.register(Category, CategoryAdmin)
 admin.site.register(Post, PostAdmin)
