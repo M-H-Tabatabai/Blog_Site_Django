@@ -15,7 +15,7 @@ def single_blog(request, pid):
 
 def test(request):
     posts = Post.objects.all()
-    context = {"post_1": posts, "name":["hossein", "ali", "abbas"]} 
+    context = {"posts": posts, "name":["hossein", "ali", "abbas"]} 
     return render(request, "test.html", context)
 
 def test2(request, pid):
