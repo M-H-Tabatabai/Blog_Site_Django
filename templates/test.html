@@ -7,8 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-        <p>{% request_MU %}</p>
-        <p>{% request_MU %}</p>
-
+        {% comment %} <p>{% request_MU %}</p>
+        <p>{% latest %}</p> {% endcomment %}
+        {% latest2 posts as result %}
+        {% for post in result %}
+           <p> {{post.title|slicer}} </p>
+        {% endfor %}
+        {{posts|slice:"0:1"}}
+        
 </body>
 </html>
