@@ -22,3 +22,8 @@ def test2(request, pid):
     post = get_object_or_404(Post, id=pid)
     return render(request, "test.html", {"posts": post})
 
+def category_blog(request, cat):
+    posts = Post.objects.filter(status = True)
+    posts = posts.filter(category__name = cat)
+    context = {"posts": posts}
+    return render(request, "blog/blog-home.html", context)

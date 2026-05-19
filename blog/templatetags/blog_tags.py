@@ -1,5 +1,6 @@
 from django import template
 from blog.models import Post
+from blog.models import Category
 
 register = template.Library()
 
@@ -37,3 +38,13 @@ def latest_post():
     posts = Post.objects.filter(status = True)[:3]
     context = {"posts":posts}
     return context
+
+@register.inclusion_tag("blog/blog-category.html")
+def category_list():
+    posts = Post.objects.filter(status = True)
+    categories = Category.objects.all()
+    category_dict = {}
+    for name in categories:
+        category_dict[name] = posts.filter(category=name).count()
+    sorted_dict = dict(sorted(category_dict.items(), key=lambda item: item[1], reverse=True))
+    return {'category_dict': sorted_dict}
