@@ -27,8 +27,13 @@ def latest_post2(posts):
 def end_slicer(text):
     return text[:5] + "..."
 
-@register.inclusion_tag("popularposts.html")
+@register.inclusion_tag("test_popularposts.html")
 def popularposts():
     posts = Post.objects.filter(status = True)
     return {"posts": posts}
 
+@register.inclusion_tag("blog/latest-post.html")
+def latest_post():
+    posts = Post.objects.filter(status = True)[:3]
+    context = {"posts":posts}
+    return context
