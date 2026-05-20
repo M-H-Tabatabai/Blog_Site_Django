@@ -31,6 +31,20 @@ def single_blog(request, pid):
     context = {"post":post}
     return render(request, "blog/blog-single.html", context)
 
+def category_blog(request, cat_name):
+    posts = Post.objects.filter(status = True)
+    posts = posts.filter(category__name = cat_name)
+    context = {"posts": posts}
+    return render(request, "blog/blog-home.html", context)
+
+def search_blog(request):
+    posts = Post.objects.filter(status = True)
+    query = request.GET.get("q")
+    if query:
+        posts = posts.filter(content__icontains = query)
+    context = {"posts" : posts}
+    return render(request, "blog/blog-home.html", context)
+
 def test(request):
     posts = Post.objects.all()
     context = {"posts": posts, "name":["hossein", "ali", "abbas"]} 
@@ -39,9 +53,3 @@ def test(request):
 def test2(request, pid):
     post = get_object_or_404(Post, id=pid)
     return render(request, "test.html", {"posts": post})
-
-def category_blog(request, cat_name):
-    posts = Post.objects.filter(status = True)
-    posts = posts.filter(category__name = cat_name)
-    context = {"posts": posts}
-    return render(request, "blog/blog-home.html", context)
