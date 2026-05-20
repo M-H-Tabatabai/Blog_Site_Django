@@ -1,4 +1,5 @@
 from django import forms
+from website.models import Contact
 
 class ContactFormSimple(forms.Form):
     name = forms.CharField(max_length=255)
@@ -6,3 +7,7 @@ class ContactFormSimple(forms.Form):
     subject = forms.CharField(max_length=255)
     message = forms.CharField(widget=forms.Textarea())
     
+class ContactModelForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = "__all__"
