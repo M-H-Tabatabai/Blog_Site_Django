@@ -24,7 +24,7 @@ def blog(request, cat_name=None, author_name=None):
     if cat_name:
         posts = posts.filter(category__name = cat_name)
 
-    paginator = Paginator(posts, 2)
+    paginator = Paginator(posts, 3)
     page_number = request.GET.get("page")
     posts = paginator.get_page(page_number)
 
