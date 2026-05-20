@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from blog.models import Post
+from django.core.paginator import Paginator
 
 # another model used kwargs
 # def blog(request, **kwargs):
@@ -22,7 +23,12 @@ def blog(request, cat_name=None, author_name=None):
         posts= posts.filter(author__username = author_name)
     if cat_name:
         posts = posts.filter(category__name = cat_name)
-    context = {"posts": posts} 
+
+    paginator = Paginator(posts, 2)
+    page_number = request.GET.get("page")
+    posts = paginator.get_page(page_number)
+
+    context = {"posts" : posts} 
     return render(request, "blog/blog-home.html", context)
 
 def single_blog(request, pid):
