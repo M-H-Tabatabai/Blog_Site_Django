@@ -6,24 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{% url 'website:test' %}" method="POST">
+    <form action="{% url 'website:test2' %}" method="POST">
     {% csrf_token %}
-    <label>name:</label>
-    <input type="text" name="name">
-    <br><br>
+    {{form.as_p}}
+    <button type=submit>submit</button>
 
-    <label>email:</label>
-    <input type="email" name="email">
-    <br><br>
-
-    <label>subject:</label>
-    <input type="text" name="subject">
-    <br><br>
-
-    <label>message:</label>
-    <input type="text" name="message">
-    <br><br>
-    <button type="submit">submit</button>
     </form>
 
 </body>

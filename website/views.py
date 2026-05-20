@@ -5,6 +5,8 @@ from django.http import HttpResponse, JsonResponse
 
 from website.models import Contact
 
+from website.forms import ContactFormSimple
+
 def index(request):
     return render(request, "website/index.html")
 
@@ -27,3 +29,18 @@ def website_test(request):
         c.message = message
         c.save()
     return render(request, "website/test.html")
+
+def website_form(request):
+    form = ContactFormSimple(request.POST)
+    if request.method == "POST":
+        if form.is_valid():
+            name = form.cleaned_data["name"]
+            email = form.cleaned_data["email"]
+            subject = form.cleaned_data["subject"]
+            message = form.cleaned_data["message"]
+            print(f"name = {name} - email = {email} - subject = {subject} - message = {message}")
+            
+        else:
+            form = ContactFormSimple()
+
+    return render(request, "website/test.html", {"form" : form})
