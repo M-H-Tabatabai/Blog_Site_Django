@@ -11,3 +11,8 @@ class ContactModelForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = "__all__"
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = "__all__"
