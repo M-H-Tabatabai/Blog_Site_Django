@@ -135,7 +135,15 @@
                             output.
                         </p>
                         <div>
-                            
+                            {% if messages %}
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                        <li class="{{ message.tags }}">
+                                            {{ message }}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                             <form
                                 action={% url "website:newsletter" %}
                                 method="POST" class="subscription relative">

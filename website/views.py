@@ -5,6 +5,8 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 
 from website.models import Contact
 
+from django.contrib import messages
+
 from website.forms import ContactFormSimple, ContactModelForm, ContactForm, NewsletterForm
 
 def index(request):
@@ -18,7 +20,9 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "The contact creation was a success.")
             return HttpResponseRedirect("#")
+        messages.success(request, "Creating a contact was not a success.")
     else:
         return render(request, "website/contact.html")
     
@@ -27,7 +31,9 @@ def newsletter(request):
         form = NewsletterForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Email successfully registered.")
             return HttpResponseRedirect("#")
+        messages.error(request, "The email was not registered!")
     else:
         return render(request, "website/index.html")
 
