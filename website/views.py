@@ -5,7 +5,7 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 
 from website.models import Contact
 
-from website.forms import ContactFormSimple, ContactModelForm, ContactForm
+from website.forms import ContactFormSimple, ContactModelForm, ContactForm, NewsletterForm
 
 def index(request):
     return render(request, "website/index.html")
@@ -21,6 +21,16 @@ def contact(request):
             return HttpResponseRedirect("#")
     else:
         return render(request, "website/contact.html")
+    
+def newsletter(request):
+    if request.method == "POST":
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("#")
+    else:
+        return render(request, "website/index.html")
+
 
 def website_test(request):
     if request.method == "POST":
