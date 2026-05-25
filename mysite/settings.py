@@ -41,11 +41,13 @@ INSTALLED_APPS = [
     'django_extensions',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'robots',
     "website.apps.WebsiteConfig",
     "blog.apps.BlogConfig",
 ]
 SITE_ID = 2
-
+ROBOTS_USE_SITEMAP = False
+ROBOTS_USE_HOST = False
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
