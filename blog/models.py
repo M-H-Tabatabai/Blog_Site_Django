@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 
 # Create your models here.
@@ -20,7 +21,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
     category = models.ManyToManyField(Category, related_name="posts")
-    # tag
+    tags = TaggableManager()
     counted_view = models.IntegerField(default=0)
     status = models.BooleanField(null=True)
     published_date = models.DateTimeField(default=timezone.now)
