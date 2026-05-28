@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
@@ -21,10 +21,12 @@ def contact(request):
         if form.is_valid():
             form.save()
             messages.success(request, "The contact creation was a success.")
-            return HttpResponseRedirect("#")
-        messages.success(request, "Creating a contact was not a success.")
+            return redirect("website:contact")
+        messages.error(request, "Creating a contact was not a success.")
     else:
-        return render(request, "website/contact.html")
+        form = ContactForm()
+
+    return render(request, "website/contact.html", {"form": form})
     
 def newsletter(request):
     if request.method == "POST":

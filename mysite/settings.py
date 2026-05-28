@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     "debug_toolbar",
     'django_summernote',
+    'captcha',
     'robots',
     'taggit',
     "website.apps.WebsiteConfig",
@@ -51,6 +52,8 @@ INSTALLED_APPS = [
 SITE_ID = 2
 ROBOTS_USE_SITEMAP = False
 ROBOTS_USE_HOST = False
+
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -160,3 +163,6 @@ SUMMERNOTE_CONFIG = {
         ],
     },
 }
+
+
+
