@@ -1,6 +1,5 @@
 from django.contrib import admin
-from blog.models import Post
-from blog.models import Category
+from blog.models import Post,Category,Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -25,5 +24,14 @@ class PostAdmin(SummernoteModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display =("name",)
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display =("name","email","approved","post_id", "created_date","updated_date",)
+    list_filter = ("name", "approved", "post_id")
+    search_fields = ("name", "email", "post_id")
+    ordering = ("-created_date",)
+    list_per_page = 20
+    date_hierarchy = "created_date"
+
+admin.site.register(Comment, CommentAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Post, PostAdmin)
