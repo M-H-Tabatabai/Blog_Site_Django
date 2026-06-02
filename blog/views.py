@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-from blog.models import Post
+from blog.models import Post,Comment
 from django.core.paginator import Paginator
 from taggit.models import Tag
-from django.db.models import Count
+from django.db.models import Count,Q
 
 # another model used kwargs
 # def blog(request, **kwargs):
@@ -21,7 +21,12 @@ from django.db.models import Count
 
 
 def blog(request, cat_name=None, author_name=None, tag_name=None):
-    posts = Post.objects.filter(status=True)
+    posts = Post.objects.filter(status=True).annotate(
+        comments_count=Count(
+            "comment",
+            filter=Q(comment__approved=True)
+        )
+    ).order_by("-created_date")
     if author_name:
         posts = posts.filter(author__username=author_name)
     if cat_name:
@@ -36,6 +41,7 @@ def blog(request, cat_name=None, author_name=None, tag_name=None):
     common_tags = Tag.objects.annotate(
         num_times=Count("taggit_taggeditem_items")
     ).order_by("-num_times")[:10]
+    
 
     context = {"posts": posts, "common_tags": common_tags, "active_tag": tag_name}
     return render(request, "blog/blog-home.html", context)
@@ -44,10 +50,11 @@ def blog(request, cat_name=None, author_name=None, tag_name=None):
 def single_blog(request, pid):
     posts = Post.objects.filter(status=True)
     post = get_object_or_404(posts, id=pid)
+    comments = Comment.objects.filter(approved=True, post=post.id)
     common_tags = Tag.objects.annotate(
         num_times=Count("taggit_taggeditem_items")
     ).order_by("-num_times")
-    context = {"post": post, "common_tags": common_tags}
+    context = {"post": post, "common_tags": common_tags, "comments" : comments}
     return render(request, "blog/blog-single.html", context)
 
 

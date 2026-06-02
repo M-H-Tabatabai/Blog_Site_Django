@@ -60,7 +60,7 @@
 		<div class="container main-menu">
 			<div class="row align-items-center justify-content-between d-flex">
 				<div id="logo">
-					<a href="index.html"><img src="{% static 'img/logo.png' %}" alt="" title="" /></a>
+					<a href="{% url 'website:index' %}"><img src="{% static 'img/logo.png' %}" alt="" title="" /></a>
 				</div>
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
@@ -190,7 +190,7 @@
 											class="lnr lnr-calendar-full"></span></p>
 									<p class="view col-lg-12 col-md-12 col-6"><a href="#">{{post.counted_view}}</a> <span
 											class="lnr lnr-eye"></span></p>
-									<p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span
+									<p class="comments col-lg-12 col-md-12 col-6"><a href="{% url 'blog:single' pid=post.id %}#comments">{{ post.comments_count }} Comments</a> <span
 											class="lnr lnr-bubble"></span></p>
 								</div>
 							</div>
