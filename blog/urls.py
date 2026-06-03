@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.urls import path
 from blog.views import *
+from .feeds import LatestPostsFeed
 
 app_name = "blog"
 
@@ -27,5 +28,6 @@ urlpatterns = [
     path("author/<str:author_name>", blog, name="author"),
     path("search/", search_blog, name = "search"),
     path("test/", test, name="test"),
-    path("<int:pid>", test2, name="test2")
+    path("<int:pid>", test2, name="test2"),
+    path("rss/", LatestPostsFeed(), name="post_feed"),
 ]
