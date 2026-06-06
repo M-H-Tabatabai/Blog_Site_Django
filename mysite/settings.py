@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'taggit',
     "website.apps.WebsiteConfig",
     "blog.apps.BlogConfig",
+    "accounts",
 ]
 SITE_ID = 2
 ROBOTS_USE_SITEMAP = False
