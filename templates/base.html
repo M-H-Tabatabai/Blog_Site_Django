@@ -46,8 +46,7 @@
                                     <a href="{% url 'accounts:logout' %}">Logout</a>
                                 {% else %}
                                     <a href="{% url 'accounts:login' %}">Login</a>
-                                    {% comment %} <a href="{% url 'accounts:signup' %}">Signup</a> {% endcomment %}
-                                    <a href="#">Signup</a>
+                                    <a href="{% url 'accounts:signup' %}">SignUp</a>
                                 {% endif %}
                             </li>
                         </ul>
