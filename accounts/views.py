@@ -1,38 +1,20 @@
-from django.http import HttpResponse
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
 
 def login_view(request):
-
     if request.user.is_authenticated:
-        return HttpResponse(
-            f"Welcome {request.user.username}. You are logged in."
-        )
+        return redirect('/website/')
+
+    form = AuthenticationForm(request, data=request.POST or None)
 
     if request.method == 'POST':
-
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        user = authenticate(
-            request,
-            username=username,
-            password=password
-        )
-
-        if user is not None:
+        if form.is_valid():
+            user = form.get_user()
             login(request, user)
             return redirect('/website/')
 
-        return render(
-            request,
-            'accounts/login.html',
-            {
-                'error': 'Username or Password is incorrect.'
-            }
-        )
-
-    return render(request, 'accounts/login.html')
+    return render(request, 'accounts/login.html', {'form': form})
 
 def logout_view(request):
     return render(request, "accounts/logout.html")

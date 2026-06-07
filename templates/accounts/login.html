@@ -41,35 +41,9 @@
                 {% endif %}
 
                 <form method="post">
+
                     {% csrf_token %}
-
-                    <div class="form-outline form-white mb-4">
-                        <label for="username" style="display:block; text-align:left; color:white; margin-bottom:8px;">
-                            Username
-                        </label>
-                        <input
-                            style="width:100%; background:transparent; color:white; border:1px solid white; border-radius:5px; padding:10px;"   
-                            type="text"
-                            id="username"
-                            name="username"
-                            class="form-control form-control-lg"
-                            required
-                        />
-                    </div>
-
-                    <div class="form-outline form-white mb-4">
-                        <label for="password" style="display:block; text-align:left; color:white; margin-bottom:8px;">
-                            Password
-                        </label>
-                        <input
-                            style="width:100%; background:transparent; color:white; border:1px solid white; border-radius:5px; padding:10px;"
-                            type="password"
-                            id="password"
-                            name="password"
-                            class="form-control form-control-lg"
-                            required
-                        />
-                    </div>
+                    {{ form.as_p }}
 
                     <p class="small mb-5 pb-lg-2">
                         <a class="text-white-50" href="#!">Forgot password?</a>

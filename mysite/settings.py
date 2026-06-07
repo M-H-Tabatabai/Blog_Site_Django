@@ -79,6 +79,8 @@ INTERNAL_IPS = [
 
 ROOT_URLCONF = "mysite.urls"
 
+LOGIN_REDIRECT_URL = '/website/'
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
