@@ -51,9 +51,11 @@ INSTALLED_APPS = [
     "blog.apps.BlogConfig",
     "accounts",
 ]
+
 SITE_ID = 2
 ROBOTS_USE_SITEMAP = False
 ROBOTS_USE_HOST = False
+
 
 MULTI_CAPTCHA_ADMIN = {
     'engine': 'simple-captcha',
