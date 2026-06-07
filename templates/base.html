@@ -43,8 +43,11 @@
                             <li>
                                 {% if user.is_authenticated %}
                                     <a href="#">{{ user.username }}</a>
+                                    <a href="{% url 'accounts:logout' %}">Logout</a>
                                 {% else %}
                                     <a href="{% url 'accounts:login' %}">Login</a>
+                                    {% comment %} <a href="{% url 'accounts:signup' %}">Signup</a> {% endcomment %}
+                                    <a href="#">Signup</a>
                                 {% endif %}
                             </li>
                         </ul>

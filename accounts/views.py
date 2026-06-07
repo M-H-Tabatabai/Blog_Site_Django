@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 
 def login_view(request):
     if request.user.is_authenticated:
@@ -16,8 +17,10 @@ def login_view(request):
 
     return render(request, 'accounts/login.html', {'form': form})
 
+@login_required
 def logout_view(request):
-    return render(request, "accounts/logout.html")
+    logout(request)
+    return redirect('/website/')
 
-def signup_view(request):
-    return render(request, "accounts/signup.html")
+# def signup_view(request):
+#     return render(request, "accounts/signup.html")
