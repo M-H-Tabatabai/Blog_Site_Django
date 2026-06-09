@@ -52,29 +52,32 @@ def single_blog(request, pid):
     posts = Post.objects.filter(status=True)
     post = get_object_or_404(posts, id=pid)
     comments = Comment.objects.filter(approved=True, post=post.id)
-
-    if request.method == "POST":
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Comment sent successfully.")
-            return redirect("blog:single", pid=post.id)
-        else:
-            messages.error(request, "Comment not sent.")
+    if post.login_require and not request.user.is_authenticated:
+        return redirect("accounts:login")
     else:
-        form = CommentForm()
+        if request.method == "POST":
+            form = CommentForm(request.POST)
+            if form.is_valid():
+                form.save()
+                messages.success(request, "Comment sent successfully.")
+                return redirect("blog:single", pid=post.id)
+            else:
+                messages.error(request, "Comment not sent.")
+        else:
+            form = CommentForm()
 
-    common_tags = Tag.objects.annotate(
-        num_times=Count("taggit_taggeditem_items")
-    ).order_by("-num_times")
+        common_tags = Tag.objects.annotate(
+            num_times=Count("taggit_taggeditem_items")
+        ).order_by("-num_times")
 
-    context = {
-        "post": post,
-        "common_tags": common_tags,
-        "comments": comments,
-        "form": form,
-    }
-    return render(request, "blog/blog-single.html", context)
+        context = {
+            "post": post,
+            "common_tags": common_tags,
+            "comments": comments,
+            "form": form,
+        }
+        return render(request, "blog/blog-single.html", context)
+    
 
 
 def category_blog(request, cat_name):
