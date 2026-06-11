@@ -20,64 +20,86 @@
 <!-- End banner Area -->
 
 <!-- Start popular-destination Area -->
+<!-- Start popular-destination Area -->
 <section class="popular-destination-area section-gap">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="menu-content pb-70 col-lg-8">
-                <div class="title text-center">
-                    <h1 class="mb-10">Popular Destinations</h1>
-                    <p>We all live in an age that belongs to the young at heart. Life that is becoming extremely
-                        fast, day.</p>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="menu-content pb-70 col-lg-8">
+ 
+        <!-- Eyebrow -->
+        <p class="rl-eyebrow">Machine learning</p>
+ 
+        <!-- Title -->
+        <h1 class="rl-title">What is reinforcement learning?</h1>
+ 
+        <!-- Lead paragraph -->
+        <p class="rl-lead">
+          A type of machine learning where an agent learns to make decisions by
+          interacting with an environment — not from labeled examples, but through
+          trial, error, and feedback.
+        </p>
+ 
+        <!-- Analogy callout -->
+        <div class="rl-analogy">
+          <p>
+            Think of teaching a dog a trick. You don't hand it a manual — you
+            <strong>reward good behavior</strong> with a treat and discourage wrong ones.
+            Over time it figures out which actions lead to treats.
+            That's reinforcement learning in a nutshell.
+          </p>
         </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="single-destination relative">
-                    <div class="thumb relative">
-                        <div class="overlay overlay-bg"></div>
-                        <img class="img-fluid" src="img/d1.jpg" alt="">
-                    </div>
-                    <div class="desc">
-                        <a href="#" class="price-btn">$150</a>
-                        <h4>Mountain River</h4>
-                        <p>Paraguay</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-destination relative">
-                    <div class="thumb relative">
-                        <div class="overlay overlay-bg"></div>
-                        <img class="img-fluid" src="img/d2.jpg" alt="">
-                    </div>
-                    <div class="desc">
-                        <a href="#" class="price-btn">$250</a>
-                        <h4>Dream City</h4>
-                        <p>Paris</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-destination relative">
-                    <div class="thumb relative">
-                        <div class="overlay overlay-bg"></div>
-                        <img class="img-fluid" src="img/d3.jpg" alt="">
-                    </div>
-                    <div class="desc">
-                        <a href="#" class="price-btn">$350</a>
-                        <h4>Cloud Mountain</h4>
-                        <p>Sri Lanka</p>
-                    </div>
-                </div>
-            </div>
+ 
+        <!-- Key actors -->
+        <p class="rl-actors-label">Key actors</p>
+        <div class="rl-actors-grid">
+ 
+          <div class="rl-actor-card">
+            <div class="rl-actor-icon rl-icon-purple">&#x1F916;</div>
+            <p class="rl-actor-name">Agent</p>
+            <p class="rl-actor-desc">The learner and decision-maker</p>
+          </div>
+ 
+          <div class="rl-actor-card">
+            <div class="rl-actor-icon rl-icon-teal">&#x1F30D;</div>
+            <p class="rl-actor-name">Environment</p>
+            <p class="rl-actor-desc">Everything the agent interacts with</p>
+          </div>
+ 
+          <div class="rl-actor-card">
+            <div class="rl-actor-icon rl-icon-blue">&#x1F4CD;</div>
+            <p class="rl-actor-name">State</p>
+            <p class="rl-actor-desc">Description of the current situation</p>
+          </div>
+ 
+          <div class="rl-actor-card">
+            <div class="rl-actor-icon rl-icon-amber">&#x1F91A;</div>
+            <p class="rl-actor-name">Action</p>
+            <p class="rl-actor-desc">What the agent can choose to do</p>
+          </div>
+ 
+          <div class="rl-actor-card">
+            <div class="rl-actor-icon rl-icon-coral">&#x2B50;</div>
+            <p class="rl-actor-name">Reward</p>
+            <p class="rl-actor-desc">Signal received after each action</p>
+          </div>
+ 
         </div>
+ 
+        <!-- Goal statement -->
+        <div class="rl-goal">
+          <p class="rl-goal-label">The agent's goal</p>
+          <p class="rl-goal-text">Maximize total reward over time — simple to state, hard to achieve.</p>
+        </div>
+ 
+      </div>
     </div>
+  </div>
 </section>
+<!-- End popular-destination Area -->
 <!-- End popular-destination Area -->
 
 
-<!-- Start other-issue Area -->
+{% comment %} <!-- Start other-issue Area -->
 <section class="other-issue-area section-gap">
     <div class="container">
         <div class="row d-flex justify-content-center">
@@ -145,14 +167,164 @@
         </div>
     </div>
 </section>
-<!-- End other-issue Area -->
+<!-- End other-issue Area --> {% endcomment %}
 
-
-
-
+<!-- Start MDP Section -->
+<section class="mdp-area section-gap">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="menu-content pb-70 col-lg-8">
+ 
+        <!-- Eyebrow -->
+        <p class="rl-eyebrow">Reinforcement learning</p>
+ 
+        <!-- Title -->
+        <h1 class="rl-title">Introducing Markov Decision Processes</h1>
+ 
+        <!-- Lead -->
+        <p class="rl-lead">
+          A Markov Decision Process is the formal mathematical framework used to model
+          sequential decision-making problems — giving reinforcement learning a rigorous
+          structure to work within.
+        </p>
+ 
+        <!-- MDP tuple callout -->
+        <div class="rl-analogy">
+          <p>Formally, an MDP is defined by a tuple: <strong>(S, A, P, R, γ)</strong> — five components that together describe every aspect of a decision problem.</p>
+        </div>
+ 
+        <!-- Components table -->
+        <p class="rl-actors-label">Components</p>
+        <div class="mdp-table-wrap">
+          <table class="mdp-table">
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>S</code></td>
+                <td>States</td>
+                <td>Set of all possible situations the agent can be in</td>
+              </tr>
+              <tr>
+                <td><code>A</code></td>
+                <td>Actions</td>
+                <td>Set of all choices available to the agent</td>
+              </tr>
+              <tr>
+                <td><code>P(s'|s,a)</code></td>
+                <td>Transition</td>
+                <td>Probability of reaching state s' from s after action a</td>
+              </tr>
+              <tr>
+                <td><code>R(s,a,s')</code></td>
+                <td>Reward</td>
+                <td>Expected reward for transitioning from s to s' via a</td>
+              </tr>
+              <tr>
+                <td><code>γ</code></td>
+                <td>Discount</td>
+                <td>How much the agent values future rewards (0 ≤ γ ≤ 1)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+ 
+        <!-- Gridworld example -->
+        <p class="rl-actors-label" style="margin-top: 36px;">The gridworld example</p>
+        <p class="rl-lead" style="margin-bottom: 20px;">
+          Imagine a robot navigating a 4×4 grid, trying to reach a treasure chest while avoiding a pit of fire.
+        </p>
+ 
+        <!-- Grid visualization -->
+        <div class="mdp-grid-wrap">
+          <div class="mdp-grid">
+            <!-- Row 1 -->
+            <div class="mdp-cell cell-start"><span class="cell-label">S</span><span class="cell-desc">Start</span></div>
+            <div class="mdp-cell cell-open"></div>
+            <div class="mdp-cell cell-open"></div>
+            <div class="mdp-cell cell-open"></div>
+            <!-- Row 2 -->
+            <div class="mdp-cell cell-open"></div>
+            <div class="mdp-cell cell-obstacle"><span class="cell-label">X</span><span class="cell-desc">Wall</span></div>
+            <div class="mdp-cell cell-open"></div>
+            <div class="mdp-cell cell-open"></div>
+            <!-- Row 3 -->
+            <div class="mdp-cell cell-open"></div>
+            <div class="mdp-cell cell-open"></div>
+            <div class="mdp-cell cell-open"></div>
+            <div class="mdp-cell cell-fire"><span class="cell-label">F</span><span class="cell-desc">Fire</span></div>
+            <!-- Row 4 -->
+            <div class="mdp-cell cell-open"></div>
+            <div class="mdp-cell cell-open"></div>
+            <div class="mdp-cell cell-open"></div>
+            <div class="mdp-cell cell-goal"><span class="cell-label">G</span><span class="cell-desc">Goal</span></div>
+          </div>
+ 
+          <!-- Legend -->
+          <div class="mdp-legend">
+            <div class="legend-item"><span class="legend-dot dot-start"></span><span><strong>S</strong> — Start position</span></div>
+            <div class="legend-item"><span class="legend-dot dot-obstacle"></span><span><strong>X</strong> — Obstacle</span></div>
+            <div class="legend-item"><span class="legend-dot dot-fire"></span><span><strong>F</strong> — Fire pit &nbsp;(reward: −10)</span></div>
+            <div class="legend-item"><span class="legend-dot dot-goal"></span><span><strong>G</strong> — Goal &nbsp;(reward: +10)</span></div>
+            <div class="legend-item"><span class="legend-dot dot-open"></span><span><strong>·</strong> — Open cell &nbsp;(reward: −1 per step)</span></div>
+          </div>
+        </div>
+ 
+        <!-- MDP breakdown cards -->
+        <p class="rl-actors-label" style="margin-top: 36px;">MDP in this example</p>
+        <div class="rl-actors-grid">
+ 
+          <div class="rl-actor-card">
+            <div class="rl-actor-icon rl-icon-blue">&#x1F4CD;</div>
+            <p class="rl-actor-name">States (S)</p>
+            <p class="rl-actor-desc">Each cell position — up to 16 states in the grid</p>
+          </div>
+ 
+          <div class="rl-actor-card">
+            <div class="rl-actor-icon rl-icon-purple">&#x2195;&#xFE0F;</div>
+            <p class="rl-actor-name">Actions (A)</p>
+            <p class="rl-actor-desc">Move up, down, left, or right</p>
+          </div>
+ 
+          <div class="rl-actor-card">
+            <div class="rl-actor-icon rl-icon-teal">&#x1F3B2;</div>
+            <p class="rl-actor-name">Transitions (P)</p>
+            <p class="rl-actor-desc">Deterministic or stochastic — a 10% slip chance makes it harder</p>
+          </div>
+ 
+          <div class="rl-actor-card">
+            <div class="rl-actor-icon rl-icon-coral">&#x2B50;</div>
+            <p class="rl-actor-name">Rewards (R)</p>
+            <p class="rl-actor-desc">−1 each step, −10 for fire, +10 for reaching the goal</p>
+          </div>
+ 
+          <div class="rl-actor-card">
+            <div class="rl-actor-icon rl-icon-amber">&#x23F3;</div>
+            <p class="rl-actor-name">Discount (γ)</p>
+            <p class="rl-actor-desc">Low γ = reach goal fast. High γ = patient long-term planning</p>
+          </div>
+ 
+        </div>
+ 
+        <!-- Key tension goal bar -->
+        <div class="rl-goal">
+          <p class="rl-goal-label">Core tension in RL</p>
+          <p class="rl-goal-text">This simple setup captures it all: <strong>exploration vs. exploitation</strong> and <strong>short-term vs. long-term reward</strong>.</p>
+        </div>
+ 
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End MDP Section -->
 
 <!-- Start home-about Area -->
-<section class="home-about-area">
+{% comment %} <section class="home-about-area">
     <div class="container-fluid">
         <div class="row align-items-center justify-content-end">
             <div class="col-lg-6 col-md-12 home-about-left">
@@ -175,9 +347,9 @@
     </div>
 </section>
 <!-- End home-about Area -->
+ {% endcomment %}
 
-
-<!-- Start blog Area -->
+{% comment %} <!-- Start blog Area -->
 <section class="recent-blog-area section-gap">
     <div class="container">
         <div class="row d-flex justify-content-center">
@@ -346,5 +518,5 @@
         </div>
     </div>
 </section>
-<!-- End recent-blog Area -->
+<!-- End recent-blog Area --> {% endcomment %}
 {% endblock %}
