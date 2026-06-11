@@ -3012,7 +3012,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .about-banner {
-  background: url(../img/top-banner.jpg) center;
+  background:black center;
   background-size: cover;
 }
 
