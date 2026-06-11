@@ -1,10 +1,8 @@
 from django.contrib import admin
 from blog.models import Post,Category,Comment
-from django_summernote.admin import SummernoteModelAdmin
 
 
-class PostAdmin(SummernoteModelAdmin):
-    summernote_fields = ('content',)
+class PostAdmin(admin.ModelAdmin):
     list_display = (
         "title",
         "author",

@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     "debug_toolbar",
-    'django_summernote',
+    # 'django_summernote',
     'captcha',
     'robots',
     'taggit',
@@ -156,22 +156,22 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-SUMMERNOTE_CONFIG = {
-    'iframe': True,
-    'summernote': {
-        'width': '1000',
-        'height': '500',
-        'lang': 'fa-IR',
-        'toolbar': [
-            ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['insert', ['link', 'picture', 'video']],
-            ['view', ['fullscreen', 'codeview']],
-        ],
-    },
-}
+# SUMMERNOTE_CONFIG = {
+#     'iframe': True,
+#     'summernote': {
+#         'width': '1000',
+#         'height': '500',
+#         'lang': 'fa-IR',
+#         'toolbar': [
+#             ['style', ['style']],
+#             ['font', ['bold', 'underline', 'clear']],
+#             ['color', ['color']],
+#             ['para', ['ul', 'ol', 'paragraph']],
+#             ['insert', ['link', 'picture', 'video']],
+#             ['view', ['fullscreen', 'codeview']],
+#         ],
+#     },
+# }
 
 
 
