@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -73,17 +74,6 @@
                         <li><a href="{% url 'website:about' %}">About</a></li>
                         <li><a href="{% url 'blog:blog' %}">Blog Home</a></li>
                                 {% comment %} <li><a href="{% url 'blog:single' %}">Blog Single</a></li> {% endcomment %}
-                        <li class="menu-has-children"><a href="">Pages</a>
-                            <ul>
-                                <li><a href="elements.html">Elements</a></li>
-                                <li class="menu-has-children"><a href="">Level 2 </a>
-                                    <ul>
-                                        <li><a href="#">Item One</a></li>
-                                        <li><a href="#">Item Two</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
                         <li><a href="{% url 'website:contact' %}">Contact</a></li>
                     </ul>
                 </nav><!-- #nav-menu-container -->
@@ -117,18 +107,14 @@
                         <div class="row">
                             <div class="col">
                                 <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Feature</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Portfolio</a></li>
+                                    <li><a href="{% url 'website:index' %}">Home</a></li>
+                                    <li><a href="{% url 'blog:blog' %}">Blog</a></li>
                                 </ul>
                             </div>
                             <div class="col">
                                 <ul>
-                                    <li><a href="#">Team</a></li>
-                                    <li><a href="#">Pricing</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="{% url 'website:about' %}">about</a></li>
+                                    <li><a href="{% url 'website:contact' %}">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
