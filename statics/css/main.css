@@ -2375,7 +2375,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .logo-img {
-  width: 150px;
+  width: 100px;
   height: auto;
 }
 
@@ -4888,3 +4888,18 @@ body.mobile-nav-active #mobile-nav-toggle {
     .cell-label { font-size: 13px; }
     .mdp-grid-wrap { flex-direction: column; }
   }
+
+
+  .h8{
+    font-size: 0.65rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+    color: inherit;
+    display: block;
+    text-decoration: none;
+    color: #222 !important;
+}
+  .h8:hover {
+    color: #f8b600 !important;
+}

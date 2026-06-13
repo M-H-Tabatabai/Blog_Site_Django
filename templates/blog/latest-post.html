@@ -10,7 +10,7 @@
 				</div>
 				<div class="details">
 					<a href={% url "blog:single" pid=post.id %}>
-						<h6>{{post.title|truncatewords:2}}</h6>
+						<p class="h8">{{post.title|truncatewords:5}}</p>
 					</a>
 					<p>{{post.published_date|naturalday}}</p>
 				</div>
