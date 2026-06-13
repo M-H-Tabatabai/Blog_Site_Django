@@ -52,6 +52,8 @@ def single_blog(request, pid):
     posts = Post.objects.filter(status=True)
     post = get_object_or_404(posts, id=pid)
     comments = Comment.objects.filter(approved=True, post=post.id)
+    prev_post = Post.objects.filter(published_date__lt=post.published_date).order_by('-published_date').first()
+    next_post = Post.objects.filter(published_date__gt=post.published_date).order_by('published_date').first()
     if post.login_require and not request.user.is_authenticated:
         return redirect("accounts:login")
     else:
@@ -75,6 +77,8 @@ def single_blog(request, pid):
             "common_tags": common_tags,
             "comments": comments,
             "form": form,
+            "prev_post": prev_post,
+            "next_post": next_post,
         }
         return render(request, "blog/blog-single.html", context)
     

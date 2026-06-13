@@ -2375,7 +2375,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .logo-img {
-  width: 100px;
+  max-width: 50px;
   height: auto;
 }
 
