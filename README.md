@@ -181,7 +181,7 @@ Before deploying to production:
 ![About Page](temp_screen/about.png)
 
 ## 📄 Contact Detail
-![Post Detail](temp_screen/post.png)
+![Post Detail](temp_screen/contact.png)
 
 # 🤝 Contributing
 ---
