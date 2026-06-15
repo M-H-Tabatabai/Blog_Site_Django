@@ -179,11 +179,11 @@ Before deploying to production:
 
 ## ℹ️ About Page
 ![About Page](temp_screen/about.png)
-# 🤝 Contributing
 
 ## 📄 Contact Detail
 ![Post Detail](temp_screen/post.png)
 
+# 🤝 Contributing
 ---
 
 Contributions are always welcome!
