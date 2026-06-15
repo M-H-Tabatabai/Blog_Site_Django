@@ -169,7 +169,22 @@ Before deploying to production:
 
 ---
 
+# 🧾 Django Blog Project
+
+## 🏠 Home Page
+![Home Page](temp_screen/home.png)
+
+## 📰 Blog Page
+![Blog Page](temp_screen/blog.png)
+
+## ℹ️ About Page
+![About Page](temp_screen/about.png)
 # 🤝 Contributing
+
+## 📄 Contact Detail
+![Post Detail](temp_screen/post.png)
+
+---
 
 Contributions are always welcome!
 
